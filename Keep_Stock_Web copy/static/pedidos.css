@@ -21,7 +21,7 @@
     color: #148577;
     font-weight: bold;
     display: flex;
-    margin-right: 900px;
+    margin-right: 1000px;
 }
 
 #titulo_produtos h2 {
@@ -32,7 +32,7 @@
 }
 
 #titulo_produtos {
-    margin-left: -110px;
+    margin-left: 100px;
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
@@ -131,6 +131,118 @@
     margin-left: 150px;
 }
 
+.opcoes {
+        display: flex;
+        gap: 15px;
+    }
+
+    /* Esconde o radio padrão */
+    .opcoes input[type="radio"] {
+        display: none;
+    }
+
+    /* Estilo do quadrado */
+    .opcoes label {
+        width: 32px;
+        height: 32px;
+        border: 2px solid #d8e0df;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: #148577;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Efeito ao passar o mouse */
+    .opcoes label:hover {
+        background-color: #e6f0ff;
+    }
+
+     /* Imagem padrão (inativa) */
+    .opcoes label img {
+        width: 22px;
+        height: 22px;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Quando selecionado */
+    .opcoes input[type="radio"]:checked + label {
+        background-color: #148577;
+        border-color: #148577;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transform: scale(1.05);
+    }
+
+    /* Troca a imagem quando ativo */
+    .opcoes input[type="radio"]:checked + label img.inativo {
+        display: none;
+    }
+    .opcoes input[type="radio"]:checked + label img.ativo {
+        display: block;
+    }
+
+    /* Por padrão, a imagem ativa fica oculta */
+    .opcoes label img.ativo {
+        display: none;
+    }
+
+/* Estilo para visualização em Lista */
+
+.lista_pedidos {
+    width: 100%;
+}
+
+.lista-container {
+    overflow-x: auto;
+}
+
+.lista_pedidos table {
+    background-color: white;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lista_pedidos table thead {
+    background-color: #148577;
+    color: white;
+}
+
+.lista_pedidos table thead th {
+    padding: 15px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid #148577;
+}
+
+.lista_pedidos table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+}
+
+.lista_pedidos table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.lista_pedidos table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.lista_pedidos table tbody td:first-child {
+    font-weight: 600;
+    color: #148577;
+}
+
+.lista_pedidos .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
 /* RESPONSIVO */
 
 @media (max-width: 1400px) {
@@ -152,6 +264,17 @@
         margin-bottom: 25px;
     }
 
+    .opcoes {
+        margin-top: 0 !important;
+    }
+
+    #pesquisar_produto,
+    #filtro_produto,
+    #adicionar_produto {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     #titulo_canvas_adicionar img,
     #titulo_canvas_editar img {
         margin-left: 0;
@@ -169,5 +292,9 @@
 
     #titulo_produtos img {
         margin-right: 10px;
+    }
+
+    #adicionar_produto {
+        width: 100%;
     }
 }
